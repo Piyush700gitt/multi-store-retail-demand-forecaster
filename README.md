@@ -2,6 +2,15 @@
 
 An end-to-end Machine Learning project that forecasts daily sales across multiple retail stores using LightGBM. The project includes an interactive Streamlit dashboard for generating forecasts, comparing stores, monitoring demand patterns, and analyzing model performance.
 
+## 🚀 Live Demo
+
+**Try the Multi-Store Retail Demand Forecaster live!**
+
+👉 [Launch Live App](https://multi-store-retail-demand-forecaster-nyhwmqh5cwkhugabapbdix.streamlit.app/)
+
+Explore interactive sales forecasts, compare store performance, analyze demand trends, and view model evaluation metrics.
+
+
 ## 🚀 Project Overview
 
 Retail businesses need accurate sales forecasts to manage inventory, staffing, and promotional activities.
