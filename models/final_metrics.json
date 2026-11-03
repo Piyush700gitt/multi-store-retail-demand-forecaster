@@ -1,0 +1,152 @@
+{
+  "methodology": {
+    "target": "daily store sales revenue (not units)",
+    "model_trained_through": "2015-06-19",
+    "holdout_start": "2015-06-20",
+    "holdout_end": "2015-07-31",
+    "forecast_cutoffs": [
+      "2015-06-19",
+      "2015-06-23",
+      "2015-06-27",
+      "2015-07-01"
+    ],
+    "horizon_days": 30,
+    "strategy": "recursive; Open/Promo/holidays taken from the known calendar",
+    "scored_on": "open days with Sales > 0; overlapping windows, one 6-week summer period",
+    "baseline": "B: mean of last 4 same-weekday sales before the cutoff"
+  },
+  "overall": {
+    "model": {
+      "MAE": 598.3010609147565,
+      "RMSE": 874.748446029909,
+      "WAPE": 0.08551192511452248,
+      "n": 114163
+    },
+    "baseline_B": {
+      "MAE": 1189.6638016111463,
+      "RMSE": 1581.052649567082,
+      "WAPE": 0.17003219375759152,
+      "n": 114163
+    },
+    "bias_pct_of_sales": -1.279778319012178,
+    "within_10pct_share": 66.74666923609225,
+    "within_20pct_share": 93.05904715187933,
+    "wape_diff_model_minus_baseline_pp_95ci": [
+      -8.69,
+      -8.22
+    ],
+    "stores_where_model_beats_baseline_pct": 99.01345291479821
+  },
+  "by_horizon": {
+    "1-7": {
+      "n": 26873,
+      "Model_WAPE_%": 8.47,
+      "BaselineB_WAPE_%": 21.51
+    },
+    "8-14": {
+      "n": 26866,
+      "Model_WAPE_%": 8.84,
+      "BaselineB_WAPE_%": 14.79
+    },
+    "15-21": {
+      "n": 26846,
+      "Model_WAPE_%": 8.1,
+      "BaselineB_WAPE_%": 16.39
+    },
+    "22-30": {
+      "n": 33578,
+      "Model_WAPE_%": 8.73,
+      "BaselineB_WAPE_%": 15.7
+    }
+  },
+  "by_weekday": {
+    "1": {
+      "n": 18932,
+      "Model_WAPE_%": 8.77,
+      "BaselineB_WAPE_%": 21.52
+    },
+    "2": {
+      "n": 17819,
+      "Model_WAPE_%": 7.72,
+      "BaselineB_WAPE_%": 23.58
+    },
+    "3": {
+      "n": 18933,
+      "Model_WAPE_%": 8.91,
+      "BaselineB_WAPE_%": 16.93
+    },
+    "4": {
+      "n": 20040,
+      "Model_WAPE_%": 8.94,
+      "BaselineB_WAPE_%": 13.76
+    },
+    "5": {
+      "n": 18929,
+      "Model_WAPE_%": 7.69,
+      "BaselineB_WAPE_%": 14.3
+    },
+    "6": {
+      "n": 18930,
+      "Model_WAPE_%": 9.24,
+      "BaselineB_WAPE_%": 10.0
+    },
+    "7": {
+      "n": 580,
+      "Model_WAPE_%": 11.65,
+      "BaselineB_WAPE_%": 9.5
+    }
+  },
+  "by_promo": {
+    "0": {
+      "n": 66286,
+      "Model_WAPE_%": 8.69,
+      "BaselineB_WAPE_%": 19.21
+    },
+    "1": {
+      "n": 47877,
+      "Model_WAPE_%": 8.41,
+      "BaselineB_WAPE_%": 14.85
+    }
+  },
+  "by_store_type": {
+    "a": {
+      "n": 61477,
+      "Model_WAPE_%": 8.66,
+      "BaselineB_WAPE_%": 16.98
+    },
+    "b": {
+      "n": 2040,
+      "Model_WAPE_%": 6.89,
+      "BaselineB_WAPE_%": 10.5
+    },
+    "c": {
+      "n": 15096,
+      "Model_WAPE_%": 8.71,
+      "BaselineB_WAPE_%": 17.25
+    },
+    "d": {
+      "n": 35550,
+      "Model_WAPE_%": 8.45,
+      "BaselineB_WAPE_%": 17.52
+    }
+  },
+  "total_30d_abs_pct_err_median": {
+    "model": 2.9021897291349026,
+    "baseline_B": 4.071316720737069
+  },
+  "model_params": {
+    "n_estimators": 281,
+    "learning_rate": 0.05,
+    "num_leaves": 63,
+    "max_depth": -1,
+    "min_child_samples": 50,
+    "subsample": 0.8,
+    "subsample_freq": 1,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 1.0,
+    "random_state": 42,
+    "n_jobs": -1,
+    "verbose": -1
+  },
+  "variant": "log_storecat"
+}
